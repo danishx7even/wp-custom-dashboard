@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.site-header, .site-footer {
+    background-color: rgb(25, 25, 25);
+}
+
+
+.site-footer {
+    position: fixed !important;
+    left: 0;
+    right: 0;
+    bottom: 0 !important;
+}
