@@ -3,7 +3,7 @@
  * Plugin Name:       WP Custom Dashboard
  * Plugin URI:        https://example.com/plugins/the-basics/
  * Description:       This plugin provides the functionality to create dashboards , custom roles and working with custom post types. 
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Muhammad Danish
@@ -25,17 +25,17 @@ define('WCD_URL', plugin_dir_url(__FILE__));
 define('WCD_BASENAME', plugin_basename(__FILE__));
 
 
-// require 'plugin-update-checker/plugin-update-checker.php';
-// use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+require 'plugin-update-checker/plugin-update-checker.php';
+use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-// $myUpdateChecker = PucFactory::buildUpdateChecker(
-// 	'https://github.com/user-name/repo-name/',
-// 	__FILE__,
-// 	'wp-custom-dashboard'
-// );
+$myUpdateChecker = PucFactory::buildUpdateChecker(
+	'https://github.com/danishx7even/wp-custom-dashboard.git',
+	__FILE__,
+	'wp-custom-dashboard'
+);
 
-// //Set the branch that contains the stable release.
-// $myUpdateChecker->setBranch('main');
+//Set the branch that contains the stable release.
+$myUpdateChecker->setBranch('main');
 
 //Optional: If you're using a private repository, specify the access token like this:
 // $myUpdateChecker->setAuthentication('your-token-here');
