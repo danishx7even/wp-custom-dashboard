@@ -3,7 +3,7 @@
  * Plugin Name:       WP Custom Dashboard
  * Plugin URI:        https://example.com/plugins/the-basics/
  * Description:       This plugin provides the functionality to create dashboards , custom roles and working with custom post types. 
- * Version:           1.0.2
+ * Version:           1.1.1
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Muhammad Danish
