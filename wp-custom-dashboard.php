@@ -3,7 +3,7 @@
  * Plugin Name:       WP Custom Dashboard
  * Plugin URI:        https://example.com/plugins/the-basics/
  * Description:       This plugin provides the functionality to create dashboards , custom roles and working with custom post types. 
- * Version:           1.0.1
+ * Version:           1.0.2
  * Requires at least: 5.2
  * Requires PHP:      7.2
  * Author:            Muhammad Danish
@@ -25,7 +25,7 @@ define('WCD_URL', plugin_dir_url(__FILE__));
 define('WCD_BASENAME', plugin_basename(__FILE__));
 
 
-require 'plugin-update-checker/plugin-update-checker.php';
+require WCD_PATH . 'plugin-update-checker-5.6/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 $myUpdateChecker = PucFactory::buildUpdateChecker(
