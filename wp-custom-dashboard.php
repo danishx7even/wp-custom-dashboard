@@ -25,14 +25,14 @@ define('WCD_URL', plugin_dir_url(__FILE__));
 define('WCD_BASENAME', plugin_basename(__FILE__));
 
 
-require WCD_PATH . 'plugin-update-checker-5.6/plugin-update-checker.php';
-use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
+// require WCD_PATH . 'plugin-update-checker-5.6/plugin-update-checker.php';
+// use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
-$myUpdateChecker = PucFactory::buildUpdateChecker(
-	'https://github.com/danishx7even/wp-custom-dashboard.git',
-	__FILE__,
-	'wp-custom-dashboard'
-);
+// $myUpdateChecker = PucFactory::buildUpdateChecker(
+// 	'https://github.com/danishx7even/wp-custom-dashboard.git',
+// 	__FILE__,
+// 	'wp-custom-dashboard'
+// );
 
 //Set the branch that contains the stable release.
 // $myUpdateChecker->setBranch('main');
@@ -52,4 +52,11 @@ register_activation_hook(__FILE__, function() {
 
     // create pages
     cpp_create_pages();
+
+    // changing permalinks style
+    global $wp_rewrite;
+    $wp_rewrite->set_permalink_structure('/%postname%/');
+
+    // Save the setting
+    $wp_rewrite->flush_rules();
 });

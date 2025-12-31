@@ -130,7 +130,7 @@ function larkon_view_dashboard_shell($user, $role, $tabs, $current_tab, $content
         <!-- MAIN CONTENT -->
         <div class="lk-main-content">
             <div class="lk-top-header">
-                <div class="lk-page-title">Welcome <?= ucfirst($role) ?></div>
+                <div class="lk-page-title">Welcome <?= ucfirst($user->display_name) ?></div>
                 <div><?php echo get_avatar($user->ID, 32, '', '', array('class' => 'user-avatar', 'style' => 'border-radius:50%;')); ?></div>
             </div>
             <div class="lk-tab-content">
@@ -317,9 +317,9 @@ function larkon_view_tab_contracts($query, $current_user, $allowed_choices)
         
                                 <?php
                                 if ($role === 'student') : ?>
-                                 <td data-label="Student"><?php echo $student_obj ? ucfirst($student_obj->user_nicename) : 'N/A'; ?></td>
-                                <?php elseif ($role === 'teacher') : ?>
-                                    <td data-label="Teacher"><?php echo $teacher_obj ? ucfirst($teacher_obj->user_nicename) : 'N/A'; ?></td>
+                                 <td data-label="Teacher"><?php echo $teacher_obj ? ucfirst($teacher_obj->user_nicename) : 'N/A'; ?></td>
+                                 <?php elseif ($role === 'teacher') : ?>
+                                    <td data-label="Student"><?php echo $student_obj ? ucfirst($student_obj->user_nicename) : 'N/A'; ?></td>
                                 <?php endif ?>
                                 
                             

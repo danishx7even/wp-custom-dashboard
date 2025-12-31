@@ -470,7 +470,7 @@ class Contract_Builder_System
         }
 
         wp_send_json_success(array('id' => $new_id,
-    'redirect' => add_query_arg(array('tab' => 'insert_contract'), home_url('/dashboard'))));
+    'redirect' => add_query_arg(array('tab' => 'info'), home_url('/dashboard'))));
     }
 
     public function ajax_save_contract_entry()

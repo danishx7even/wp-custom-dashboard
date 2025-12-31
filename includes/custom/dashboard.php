@@ -13,6 +13,7 @@ function larkon_dashboard_shortcode() {
     $tabs = get_main_dashboard_config();
     $default_tab = array_key_first($tabs);
     $current_tab = isset($_GET['tab']) ? sanitize_key($_GET['tab']) : $default_tab;
+    $user = wp_get_current_user();
 
     // Get current page URL without any query parameters
     $base_url = remove_query_arg(array_keys($_GET));
@@ -41,7 +42,7 @@ function larkon_dashboard_shortcode() {
         <div class="lk-main-content">
             <div class="lk-top-header">
                 <div class="lk-page-title"><?php echo isset($tabs[$current_tab]) ? esc_html($tabs[$current_tab]['title']) : 'Dashboard'; ?></div>
-                <div><?php echo get_avatar($current_user_id, 32, '', '', array('class' => 'user-avatar')); ?></div>
+                <div style="display: flex; gap: 20px; align-items: center;"> <?= ucfirst($user->display_name) ?> <?php echo get_avatar($current_user_id, 32, '', '', array('class' => 'user-avatar')); ?></div>
             </div>
 
             <div class="lk-tab-content">
